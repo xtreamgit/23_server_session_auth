@@ -58,6 +58,45 @@ The two commented lines allows me to test the main.go -> model.Setup() function 
 This document will be updated as needed. 
 BTW: This repo will be recreated in a public repo under a different name. 
 
+To create a db and table for the users go into the container with go exec -it and run these commands:
+
+docker exec -it a5736ac85664 psql -U admin
+
+at the postgres admin prompt enter:
+
+id serial not null unique,
+name varchar(64) not null,
+email varchar(64) not null unique,
+password text not null,
+primary key (id) );
+CREATE TABLE
+
+admin=# \dt
+       List of relations
+ Schema | Name  | Type  | Owner 
+--------+-------+-------+-------
+ public | users | table | admin
+(1 row)
+
+admin=# select * from users;
+ id | name | email | password 
+----+------+-------+----------
+(0 rows)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
