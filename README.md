@@ -1,4 +1,4 @@
-# 23_server_session_auth
+# 23_server_session_auth - fix
 
 The source for this repo is: Server Side Session Authentication | Go with Vue.js Authentication
 from: NerdCademy
@@ -25,14 +25,14 @@ Notice that the ports column shows 0.0.0.0 mapped to the external port 5432 whic
 
 In addition to that, he fails to mention that the packages and modules must match the current environment. As a newbie, I need to know this type of information. These details are crucial if you don't want to waste days trying to troubleshoot something that could be solved in 30 seconds. To his credit, he created a video that explains packages and modules with go. 
 
-Okay >>>>>>>> 
-
 After we are set and done, the go.mod should look like this:
 
 module github.com/xtreamgit/23_server_session_auth
 go 1.19
-------------------------------------------------------------------------
+
+
 Notice that the url for the module is my github.com repo (xtreamgit/23_server_session_auth).
+------------------------------------------------------------------------
 
 The main.go file should look like this:
 
@@ -48,9 +48,10 @@ func main() {
 	// routes.Setup()
 }
 
----------------------------------------------------------------------------
+
 
 Notice that the import command also uses my repo's URL and the folder name (model).
+---------------------------------------------------------------------------
 
 The two commented lines allows me to test the main.go -> model.Setup() function separately.
 
